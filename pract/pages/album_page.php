@@ -18,9 +18,16 @@ while ($tag = mysqli_fetch_assoc($tag_result1)) {
     <!DOCTYPE html>
     <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <meta name="author" content="Script Tutorials" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <title><?php echo $tag['name']; ?></title>
+        <link href="../css/styles.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../JS/JQuery.js"></script>
+        <script type="text/javascript" src="../JS/jquery-ui-1.8.21.custom.min.js"></script>
+        <script type="text/javascript" src="../JS/main.js"></script>
         <style type="text/css">
+
             #content {
                 width: 500px; /* Ширина слоя */
                 margin: 0 auto 50px; /* Выравнивание по центру */
@@ -56,17 +63,36 @@ while ($tag = mysqli_fetch_assoc($tag_result1)) {
             <a href="<?php echo $tag['link']; ?>">источник</a>
         </p>
     </div>
-    <?php
-    while ($tagSongs = mysqli_fetch_assoc($tagResultSongs)) {
 
-        ?>
-        <div id="songs">
-            <audio src="../music/<?php echo $tagSongs['link'] ?>" controls></audio>
+    <div class="example">
+
+        <div class="player">
+            <div class="pl"></div>
+            <div class="title"></div>
+            
+            <div class="cover"></div>
+            <div class="controls">
+                <div class="play"></div>
+                <div class="pause"></div>
+                <div class="rew"></div>
+                <div class="fwd"></div>
+            </div>
+            <div class="volume"></div>
+            <div class="tracker"></div>
         </div>
-        <?php
+        <ul class="playlist hidden">
+            <?php
+            while ($tagSongs = mysqli_fetch_assoc($tagResultSongs)) {
 
-    }
-    ?>
+                ?>
+                <li audiourl="../../music/<?php echo $tagSongs['link']; ?>" cover="../<?php echo $tag['pic']; ?>" artist="Artist 1"><?php echo $tagSongs['name']; ?></li>
+                <?php
+            }
+            ?>
+        </ul>
+
+    </div>
+
 
     <center><a href="index.php">Go back</a></center>
     </body>
