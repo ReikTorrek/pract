@@ -40,7 +40,7 @@
         </div>
         <button class = "dws-submit"  name="submit">Войти</button>
         <br>
-        <a href="reset.php">Восстановить пароль</a><br>
+        
         <a href="reg.php" class="buttonReg js-buttonReg-campaign" id="buttonReg" >Нет аккаунта? Зарегистрироваться!</a>
     </form>
 </div>
