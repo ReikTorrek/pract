@@ -24,7 +24,7 @@
             session_start();
             require_once('connect.php');
             if (isset($_SESSION['username'])){
-                echo '<a href="logout.php">' . $_SESSION['username'] .  '</a>';
+                echo '<a href="profilePage.php">' . $_SESSION['username'] .  '</a>';
             }
             else{
                 echo '<a href="login.php">Вход</a>';

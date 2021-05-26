@@ -1,0 +1,42 @@
+.avatar>img{
+    border-radius: 560px;
+    float: left;
+    width: 185px;
+    height: 170px;
+    margin-right: 50px;
+}
+.username>span{
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    border-bottom: 5px solid green;
+    padding-bottom: 1px;
+}
+.username{
+    margin-bottom: 15px;
+}
+.change{
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 25px;
+    background-color: green;
+    text-align: center;
+    padding-top: 15px;
+}
+.change>a{
+    margin: 0 auto;
+}
+
+input{
+    background-color: #343534;
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.imageChanger{
+    margin-top: 150px;
+    float: left;
+}
+form{
+    margin-right: 0;
+}
