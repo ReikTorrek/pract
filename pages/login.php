@@ -61,14 +61,22 @@
                 $query = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
                 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                 $count = mysqli_num_rows($result);
+                $isAdmin = mysqli_fetch_assoc($result);
+                var_dump($isAdmin['admin']);
+                var_dump($count);
+                if ($count == 1 && $isAdmin['admin'] == 1){
+                    $_SESSION['username'] = $username;
+                    header('Location: adminPanel.php');
+                }
+                elseif ($count == 1){
+                    $_SESSION['username'] = $username;
+                    header('location: index.php');
+                }
+                else{
+                    $_SESSION['msgg'] = "Данные введены неверно.";
+                }
             }
-            if ($count == 1){
-                $_SESSION['username'] = $username;
-                header('location: index.php');
-            }
-            else{
-                $_SESSION['msgg'] = "Данные введены неверно.";
-            }
+
         ?>
 </body>
 <script src="../JS/script1.js"></script>

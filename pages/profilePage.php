@@ -58,6 +58,13 @@
                 <a href="changer.php">Изменить</a>
             </div>
         </div>
+        <div class="adminPanel">
+            <?php
+                if ($userInfo['admin'] == 1){
+                    echo '<a href="adminPanel.php">Перейти в админ-панель</a>';
+                }
+            ?>
+        </div>
     </div>
 </div>
 </body>

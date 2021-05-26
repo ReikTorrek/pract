@@ -26,14 +26,11 @@ if (isset($_GET['rename'])){
             if (strlen($newUserName) <= 3){
                 $_SESSION['error_message'] = "Ваш Логин слишком короткий";
             }
-            if (ctype_alpha($newUserName)){
-                $_SESSION['error_message'] = "Ваш логин состоит из недопустимых символов";
-            }
         }
-        //var_dump($_SESSION['error_message']);
+        var_dump($_SESSION['error_message']);
         if ($_SESSION['error_message'] == ""){
             var_dump($_SESSION['error_message']);
-            trim($newUserName, "\x00..\x1F");
+            $newUserName = str_replace(' ', '', $newUserName);
             $connection->query("UPDATE users SET username='$newUserName' WHERE username = '$username' ");
             echo 'Замена прошла';
             header("Location: logout.php");

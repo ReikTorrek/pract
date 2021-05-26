@@ -62,7 +62,7 @@
                     <input type="text" name="login" data-rule = "login" placeholder="<?php echo $userInfo['username']; ?>">
                 </div>
                 <div class="mail">
-                    <span>Внимание, после смены логина вам надо будет заново авторизоваться, используя свой новый логин.</span>
+                    <span>Внимание, после смены логина вам надо будет заново авторизоваться, используя свой новый логин. Все пробелы будут автоматически удалены</span>
                     <br>
                     <span><?php echo $_SESSION['error_message'];
                                 $_SESSION['error_message'] = "";
