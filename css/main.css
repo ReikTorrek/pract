@@ -52,6 +52,9 @@ img{
     width: 185px;
     height: 170px;
 }
+.image>a>img{
+    border-radius: 150px;
+}
 .link > a{
     padding-right: 15px;
     color: #ffffff;
@@ -108,7 +111,7 @@ audio {
 .songList{
     overflow-y: scroll;
     width: 100%;
-    height: 75%;
+    height: 70%;
     padding-top: 10px;
 }
 
