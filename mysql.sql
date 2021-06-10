@@ -11,7 +11,7 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 03/06/2021 00:11:39
+ Date: 10/06/2021 03:56:59
 */
 
 SET NAMES utf8mb4;
@@ -99,6 +99,26 @@ CREATE TABLE `columns_priv`  (
 -- ----------------------------
 -- Records of columns_priv
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for concert
+-- ----------------------------
+DROP TABLE IF EXISTS `concert`;
+CREATE TABLE `concert`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of concert
+-- ----------------------------
+INSERT INTO `concert` VALUES (26, 'Какой - то концерт', 'Я был на таком - то концерте ахуеть всё короче класс бла бла бла я не хнаю что тут писать в этом тексте нет запятых и куча ошибок потому что я пишу на скорость а не на урок русского языка пи вообще иди нахцуй что в голову приходит то и пишу пальцами нихуя не попадаюс, потому чвто посмтавила запятуюя нихуя себе', '240070.jpg', 'https://www.php.net/manual/en/reserved.variables.files');
+INSERT INTO `concert` VALUES (27, 'dasda', 'Я был на таком - то концерте ахуеть всё короче класс бла бла бла я не хнаю что тут писать в этом тексте нет запятых и куча ошибок потому что я пишу на скорость а не на урок русского языка пи вообще иди нахцуй что в голову приходит то и пишу пальцами нихуя не попадаюс, потому чвто посмтавила запятуюя нихуя себе', '110144.jpg', 'https://www.php.net/manual/en/reserved.variables.files');
+INSERT INTO `concert` VALUES (28, 'Фестиваль «У дяди Бори»', 'Исполнял свою песню «Жопа». Выступал третьим по счету и прыгнул в канаву с грязью! Незабываемое было представление.', 'EFOwzNG2ii4.jpg', NULL);
 
 -- ----------------------------
 -- Table structure for db
@@ -1299,6 +1319,9 @@ INSERT INTO `innodb_index_stats` VALUES ('mysql', 'album', 'PRIMARY', '2021-06-0
 INSERT INTO `innodb_index_stats` VALUES ('mysql', 'author', 'PRIMARY', '2021-06-03 00:08:59', 'n_diff_pfx01', 6, 1, 'id');
 INSERT INTO `innodb_index_stats` VALUES ('mysql', 'author', 'PRIMARY', '2021-06-03 00:08:59', 'n_leaf_pages', 1, NULL, 'Number of leaf pages in the index');
 INSERT INTO `innodb_index_stats` VALUES ('mysql', 'author', 'PRIMARY', '2021-06-03 00:08:59', 'size', 1, NULL, 'Number of pages in the index');
+INSERT INTO `innodb_index_stats` VALUES ('mysql', 'concert', 'PRIMARY', '2021-06-08 23:02:52', 'n_diff_pfx01', 3, 1, 'id');
+INSERT INTO `innodb_index_stats` VALUES ('mysql', 'concert', 'PRIMARY', '2021-06-08 23:02:52', 'n_leaf_pages', 1, NULL, 'Number of leaf pages in the index');
+INSERT INTO `innodb_index_stats` VALUES ('mysql', 'concert', 'PRIMARY', '2021-06-08 23:02:52', 'size', 1, NULL, 'Number of pages in the index');
 INSERT INTO `innodb_index_stats` VALUES ('mysql', 'gtid_slave_pos', 'PRIMARY', '2019-10-21 15:17:49', 'n_diff_pfx01', 0, 1, 'domain_id');
 INSERT INTO `innodb_index_stats` VALUES ('mysql', 'gtid_slave_pos', 'PRIMARY', '2019-10-21 15:17:49', 'n_diff_pfx02', 0, 1, 'domain_id,sub_id');
 INSERT INTO `innodb_index_stats` VALUES ('mysql', 'gtid_slave_pos', 'PRIMARY', '2019-10-21 15:17:49', 'n_leaf_pages', 1, NULL, 'Number of leaf pages in the index');
@@ -1452,6 +1475,7 @@ CREATE TABLE `innodb_table_stats`  (
 -- ----------------------------
 INSERT INTO `innodb_table_stats` VALUES ('mysql', 'album', '2021-06-02 23:55:24', 3, 1, 0);
 INSERT INTO `innodb_table_stats` VALUES ('mysql', 'author', '2021-06-03 00:08:59', 6, 1, 0);
+INSERT INTO `innodb_table_stats` VALUES ('mysql', 'concert', '2021-06-08 23:02:52', 3, 1, 0);
 INSERT INTO `innodb_table_stats` VALUES ('mysql', 'gtid_slave_pos', '2019-10-21 15:17:49', 0, 1, 0);
 INSERT INTO `innodb_table_stats` VALUES ('mysql', 'songs', '2021-06-03 00:10:04', 36, 1, 1);
 INSERT INTO `innodb_table_stats` VALUES ('mysql', 'users', '2021-05-25 02:00:58', 5, 1, 0);
@@ -1826,6 +1850,15 @@ CREATE TABLE `users`  (
   `admin` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (2, 'someuser', '1234567891', 'somemail@mail.ru', '0_cb8cc_37fc8ec2_orig (1).png', '0');
+INSERT INTO `users` VALUES (3, 'someuser1', '1231231231', 'somemail1@mail.ru', NULL, '0');
+INSERT INTO `users` VALUES (10, 'admin', 'qweqwe', 'mail@mail.ru', NULL, '0');
+INSERT INTO `users` VALUES (13, 'admin1', 'qweqwe', 'mail@mail.ru', NULL, '0');
+INSERT INTO `users` VALUES (14, 'jimwia', '11051988', 'mail@mail.ru', '240070.jpg', '1');
 
 -- ----------------------------
 -- View structure for user
